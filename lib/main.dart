@@ -31,7 +31,7 @@ class Home extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () { },
         backgroundColor: Colors.teal[400],
-        child: Text("CLICK"),
+        child: Text("CLICK "),
       ),
     );
   }
