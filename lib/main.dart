@@ -1,5 +1,7 @@
 
 
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 
@@ -15,21 +17,19 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Flutter App"),
+        title: Text("Flutter App"),
         backgroundColor: Colors.teal[400],
       ),
-
-      body: const Center(
-        child: Text('Body is working',
-          style: TextStyle(
-            fontFamily: 'Ubuntu',
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
+      body: Center(
+        child: IconButton(
+          onPressed: () {
+            print("icon button pressed");
+          },
+          icon: Icon(Icons.alternate_email),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () { },
+        onPressed: () {  },
         backgroundColor: Colors.teal[400],
         child: Text("CLICK"),
       ),
