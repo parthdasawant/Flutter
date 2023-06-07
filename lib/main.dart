@@ -19,7 +19,7 @@ class _QuotesState extends State<Quotes> {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(182,68,64,1),
       appBar: AppBar(
-        title: const Text('QUOTES'),
+        title: const Text('QUOTES' ),
       ),
     );
   }
