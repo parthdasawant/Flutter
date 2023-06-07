@@ -14,7 +14,7 @@ class Idcard extends StatelessWidget {
       appBar: AppBar(
         title: const Text("ID Card"),
         centerTitle: true,
-        backgroundColor: Colors.grey[700],
+        backgroundColor: Colors.grey[700] ,
       ),
       body: Center(
         child: Container(
