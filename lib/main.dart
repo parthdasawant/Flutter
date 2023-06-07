@@ -4,8 +4,16 @@ void main() => runApp(const MaterialApp(
   home: Idcard(),
 ));
 
-class Idcard extends StatelessWidget {
+class Idcard extends StatefulWidget {
   const Idcard({super.key});
+
+  @override
+  State<Idcard> createState() => _IdcardState();
+}
+
+class _IdcardState extends State<Idcard> {
+  int levelCounter = 0;
+  String level='noob';
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +24,24 @@ class Idcard extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.grey[700] ,
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            levelCounter += 1;
+            if((levelCounter >= 5) && (levelCounter < 10)) {
+              level = 'amateur';
+            }
+            else if(levelCounter > 10) {
+              level = 'ultra pro max';
+            } else {
+              level = 'noob';
+            }
+          });
+        },
+        backgroundColor: Colors.grey,
+        child: const Icon(Icons.add, color: Colors.white, ),
+      ),
       body: Padding(
-
           padding: const EdgeInsets.all(20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -59,8 +83,8 @@ class Idcard extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 5),
-              const Text('NAIVE',
-                style: TextStyle(
+              Text(level,
+                style: const TextStyle(
                   letterSpacing: 2.0,
                   fontSize: 35.0,
                   fontWeight: FontWeight.bold,
